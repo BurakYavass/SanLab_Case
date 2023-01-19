@@ -29,7 +29,7 @@ public class MouseContoller : MonoBehaviour
         Camera = Camera.main;       
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         if (!complete)
@@ -60,7 +60,7 @@ public class MouseContoller : MonoBehaviour
                 else if(hitObject.transform.GetComponent<DragItem>().HoldAble())
                 {
                     _dragItemSc = hitObject.transform.GetComponent<DragItem>();
-                    _dropPlaceSc = _dragItemSc.dropPlace;
+                    _dropPlaceSc = _dragItemSc.dropItem;
                 }
 
                                  
@@ -125,7 +125,7 @@ public class MouseContoller : MonoBehaviour
 
         else if (Input.GetMouseButtonUp(0))
         {
-            //Döndürülebilen objeceyi boşa çekiyor
+            
             if (_rotateObject) 
                 _rotateObject = null;
             

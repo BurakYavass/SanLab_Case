@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DragItem : ObjectID
 {
-    public DropPlace dropPlace;
+    public DropPlace dropItem;
 
     public Vector3 firstPosition;
     public Vector3 firstRotation;
@@ -16,9 +16,6 @@ public class DragItem : ObjectID
 
     [SerializeField] private DragItem[] assembleItems;
     [SerializeField] private DragItem[] dissembleItems;
-
-    //public int assembleCount;
-    //private int dissembleCount;
 
     private void Start()
     {
@@ -45,12 +42,12 @@ public class DragItem : ObjectID
 
     public void OnDropPlace()
     {
-        TaskManager.instance.AddList(this);
+        //TaskManager.instance.AddList(this);
     }
 
     public void OutDropPlace()
     {
-        TaskManager.instance.RemoveList(this);
+        //TaskManager.instance.RemoveList(this);
     }
 
     

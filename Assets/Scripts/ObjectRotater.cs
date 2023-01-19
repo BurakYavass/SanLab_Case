@@ -6,12 +6,33 @@ using UnityEngine;
 public class ObjectRotater : ObjectID
 {
    [SerializeField] private float _rotationSpeed;
+   [SerializeField] private Collider _capsuleCollider;
    private float _objectAngle;
 
-   public void ObjectRotate()
+    private void Start()
     {
-        _objectAngle += Input.GetAxis("Mouse X") * _rotationSpeed;
+        if (!_capsuleCollider)
+        {
+            _capsuleCollider = GetComponent<CapsuleCollider>();
+        }
+    }
 
-        transform.localRotation = Quaternion.Euler(0,_objectAngle,0);
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.R))
+        {
+            _capsuleCollider.enabled = true;
+        }
+        else
+        {
+            _capsuleCollider.enabled = false;
+        }
+    }
+
+    public void ObjectRotate()
+    {
+        _objectAngle += -Input.GetAxis("Mouse X") * _rotationSpeed;
+
+        transform.localRotation = Quaternion.Euler(0, _objectAngle, 0);
     }
 }

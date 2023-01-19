@@ -10,7 +10,8 @@ public class DropPlace : ObjectID
 
     private void Start()
     {
-        _renderer = GetComponent<MeshRenderer>();
+        if(_renderer == null)
+            _renderer = GetComponent<MeshRenderer>();
         _renderer.enabled = false;
     }
 
