@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8558497639021747534}
   - component: {fileID: 8558497639021747538}
   - component: {fileID: 8558497639021747539}
-  - component: {fileID: 8558497639021747532}
+  - component: {fileID: 4918932076018676131}
   - component: {fileID: 8558497639021747533}
   m_Layer: 0
   m_Name: wrist_pin
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8558497639021747535}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.0009805203, y: -0.13778995, z: -0.50971866}
+  m_LocalPosition: {x: 0.0059768744, y: -0.041114762, z: 0.00030347053}
   m_LocalScale: {x: 100, y: 100.00002, z: 100.00002}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -85,8 +85,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8558497639021747532
-MeshCollider:
+--- !u!136 &4918932076018676131
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -95,10 +95,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -3963033958363367667, guid: 5ac51b1de82229c4aa66a2565a2792ee, type: 3}
+  m_Radius: 0.00008881839
+  m_Height: 0.00087241695
+  m_Direction: 1
+  m_Center: {x: -1.792751e-10, y: 0.000009834407, z: -0.000000021101217}
 --- !u!114 &8558497639021747533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,12 +117,14 @@ MonoBehaviour:
   firstRotation: {x: 0, y: 0, z: 0}
   firstParent: {fileID: 0}
   dropPlace: 0
+  holdable: 0
   assembleItems:
   - {fileID: 8558497640402007653}
   - {fileID: 8558497639400109914}
-  dissambleItems:
+  dissembleItems:
   - {fileID: 8558497641122941765}
   - {fileID: 8558497640321361797}
+  assembleCount: 0
 --- !u!1 &8558497639192562186
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,7 +136,7 @@ GameObject:
   - component: {fileID: 8558497639192562185}
   - component: {fileID: 8558497639192562189}
   - component: {fileID: 8558497639192562190}
-  - component: {fileID: 8558497639192562191}
+  - component: {fileID: 1366209762902597211}
   - component: {fileID: 8558497639192562184}
   m_Layer: 0
   m_Name: rod_bolt_2
@@ -151,7 +153,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8558497639192562186}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0.030146003, y: -0.46643862, z: -0.50971866}
+  m_LocalPosition: {x: -0.025149647, y: -0.36976343, z: 0.00030347053}
   m_LocalScale: {x: 100, y: 100.00002, z: 100.00002}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -208,8 +210,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8558497639192562191
-MeshCollider:
+--- !u!136 &1366209762902597211
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -218,10 +220,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2982934669660133556, guid: 5ac51b1de82229c4aa66a2565a2792ee, type: 3}
+  m_Radius: 0.00012005928
+  m_Height: 0.00052448723
+  m_Direction: 2
+  m_Center: {x: -3.2940684e-12, y: -5.2236874e-12, z: -0.000039078473}
 --- !u!114 &8558497639192562184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,9 +242,11 @@ MonoBehaviour:
   firstRotation: {x: 0, y: 0, z: 0}
   firstParent: {fileID: 0}
   dropPlace: 0
+  holdable: 0
   assembleItems:
   - {fileID: 8558497640536094371}
-  dissambleItems: []
+  dissembleItems: []
+  assembleCount: 0
 --- !u!1 &8558497639225705714
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,7 +258,7 @@ GameObject:
   - component: {fileID: 8558497639225705713}
   - component: {fileID: 8558497639225705717}
   - component: {fileID: 8558497639225705718}
-  - component: {fileID: 8558497639225705719}
+  - component: {fileID: 3799577432433366258}
   - component: {fileID: 8558497639225705712}
   m_Layer: 0
   m_Name: rod_bearing_cap_side
@@ -271,7 +275,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8558497639225705714}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.0009805203, y: -0.38555777, z: -0.5097186}
+  m_LocalPosition: {x: 0.0059768744, y: -0.28888258, z: 0.00030353013}
   m_LocalScale: {x: 100, y: 100.00002, z: 100.00002}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -328,8 +332,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8558497639225705719
-MeshCollider:
+--- !u!65 &3799577432433366258
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -338,10 +342,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 5642959312013759625, guid: 5ac51b1de82229c4aa66a2565a2792ee, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.00050800026, y: 0.00022311327, z: 0.00025329017}
+  m_Center: {x: 3.0559022e-10, y: 5.169879e-25, z: -5.820769e-11}
 --- !u!114 &8558497639225705712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -360,10 +363,11 @@ MonoBehaviour:
   firstRotation: {x: 0, y: 0, z: 0}
   firstParent: {fileID: 0}
   dropPlace: 0
-  assembleItems:
+  holdable: 0
+  assembleItems: []
+  dissembleItems:
   - {fileID: 8558497640536094371}
-  dissambleItems:
-  - {fileID: 8558497640536094371}
+  assembleCount: 0
 --- !u!1 &8558497639400109908
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,7 +379,7 @@ GameObject:
   - component: {fileID: 8558497639400109915}
   - component: {fileID: 8558497639400109919}
   - component: {fileID: 8558497639400109912}
-  - component: {fileID: 8558497639400109913}
+  - component: {fileID: 322472172535458035}
   - component: {fileID: 8558497639400109914}
   m_Layer: 0
   m_Name: piston
@@ -392,7 +396,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8558497639400109908}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.0009805203, y: -0.08019199, z: -0.50971836}
+  m_LocalPosition: {x: 0.0059768744, y: 0.016483203, z: 0.00030376855}
   m_LocalScale: {x: 100, y: 100.00002, z: 100.00002}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -449,8 +453,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8558497639400109913
-MeshCollider:
+--- !u!65 &322472172535458035
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -459,10 +463,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -818845697879174583, guid: 5ac51b1de82229c4aa66a2565a2792ee, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.0008890003, y: 0.00088900013, z: 0.0005065666}
+  m_Center: {x: 3.055902e-10, y: -4.220055e-10, z: 4.365574e-11}
 --- !u!114 &8558497639400109914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -481,11 +484,10 @@ MonoBehaviour:
   firstRotation: {x: 0, y: 0, z: 0}
   firstParent: {fileID: 0}
   dropPlace: 0
+  holdable: 0
   assembleItems: []
-  dissambleItems:
-  - {fileID: 8558497641122941765}
-  - {fileID: 8558497640321361797}
-  - {fileID: 8558497639021747533}
+  dissembleItems: []
+  assembleCount: 0
 --- !u!1 &8558497640279509699
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,7 +499,7 @@ GameObject:
   - component: {fileID: 8558497640279509698}
   - component: {fileID: 8558497640279509702}
   - component: {fileID: 8558497640279509703}
-  - component: {fileID: 8558497640279509696}
+  - component: {fileID: 2775956267947532110}
   - component: {fileID: 8558497640279509697}
   m_Layer: 0
   m_Name: rod_bearing_rod_side
@@ -514,7 +516,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8558497640279509699}
   m_LocalRotation: {x: 0.70710665, y: -0, z: -0, w: 0.7071069}
-  m_LocalPosition: {x: 0.0009805203, y: -0.33962473, z: -0.5097186}
+  m_LocalPosition: {x: 0.0059768744, y: -0.24294955, z: 0.00030353013}
   m_LocalScale: {x: 100, y: 100.00002, z: 100.00002}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -571,8 +573,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8558497640279509696
-MeshCollider:
+--- !u!65 &2775956267947532110
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -581,10 +583,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -3199749510219156936, guid: 5ac51b1de82229c4aa66a2565a2792ee, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.00050800026, y: 0.00022311327, z: 0.00025329017}
+  m_Center: {x: 3.0559022e-10, y: 4.135903e-24, z: 2.6193445e-10}
 --- !u!114 &8558497640279509697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -603,9 +604,12 @@ MonoBehaviour:
   firstRotation: {x: 0, y: 0, z: 0}
   firstParent: {fileID: 0}
   dropPlace: 0
+  holdable: 0
   assembleItems: []
-  dissambleItems:
+  dissembleItems:
   - {fileID: 8558497640536094371}
+  - {fileID: 8558497639225705712}
+  assembleCount: 0
 --- !u!1 &8558497640321361799
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,7 +621,7 @@ GameObject:
   - component: {fileID: 8558497640321361798}
   - component: {fileID: 8558497640321361802}
   - component: {fileID: 8558497640321361803}
-  - component: {fileID: 8558497640321361796}
+  - component: {fileID: 9202730845486392388}
   - component: {fileID: 8558497640321361797}
   m_Layer: 0
   m_Name: pin_clip_2
@@ -634,7 +638,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8558497640321361799}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.0010036469, y: -0.09067519, z: -0.43660113}
+  m_LocalPosition: {x: 0.006000001, y: 0.006000012, z: 0.073420994}
   m_LocalScale: {x: 100, y: 100.00002, z: 100.00002}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -691,8 +695,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8558497640321361796
-MeshCollider:
+--- !u!65 &9202730845486392388
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -701,10 +705,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -9048472133828361331, guid: 5ac51b1de82229c4aa66a2565a2792ee, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.00025897732, y: 0.00008434584, z: 0.00024036842}
+  m_Center: {x: 0.0000035627106, y: 0.0000010693363, z: -0.0000031264726}
 --- !u!114 &8558497640321361797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -723,9 +726,11 @@ MonoBehaviour:
   firstRotation: {x: 0, y: 0, z: 0}
   firstParent: {fileID: 0}
   dropPlace: 0
+  holdable: 0
   assembleItems:
   - {fileID: 8558497639021747533}
-  dissambleItems: []
+  dissembleItems: []
+  assembleCount: 0
 --- !u!1 &8558497640402007655
 GameObject:
   m_ObjectHideFlags: 0
@@ -754,7 +759,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8558497640402007655}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.000984931, y: -0.24496858, z: -0.5096885}
+  m_LocalPosition: {x: 0.005981285, y: -0.14829339, z: 0.00033363048}
   m_LocalScale: {x: 100, y: 100.00002, z: 100.00002}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -843,11 +848,12 @@ MonoBehaviour:
   firstRotation: {x: 0, y: 0, z: 0}
   firstParent: {fileID: 0}
   dropPlace: 0
+  holdable: 0
   assembleItems: []
-  dissambleItems:
-  - {fileID: 8558497640556407345}
-  - {fileID: 8558497639192562184}
+  dissembleItems:
   - {fileID: 8558497639021747533}
+  - {fileID: 8558497640279509697}
+  assembleCount: 0
 --- !u!1 &8558497640536094429
 GameObject:
   m_ObjectHideFlags: 0
@@ -859,7 +865,7 @@ GameObject:
   - component: {fileID: 8558497640536094428}
   - component: {fileID: 8558497640536094368}
   - component: {fileID: 8558497640536094369}
-  - component: {fileID: 8558497640536094370}
+  - component: {fileID: 8982667294732287503}
   - component: {fileID: 8558497640536094371}
   m_Layer: 0
   m_Name: rod_cap
@@ -876,7 +882,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8558497640536094429}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.0009805203, y: -0.41949826, z: -0.509716}
+  m_LocalPosition: {x: 0.0059768744, y: -0.32282308, z: 0.00030615274}
   m_LocalScale: {x: 100, y: 100.00002, z: 100.00002}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -933,8 +939,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8558497640536094370
-MeshCollider:
+--- !u!65 &8982667294732287503
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -943,10 +949,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -8776534663366643508, guid: 5ac51b1de82229c4aa66a2565a2792ee, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.00077215966, y: 0.00022357877, z: 0.0003048002}
+  m_Center: {x: -1.8917487e-10, y: 2.9467626e-10, z: -2.3283064e-10}
 --- !u!114 &8558497640536094371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -965,10 +970,14 @@ MonoBehaviour:
   firstRotation: {x: 0, y: 0, z: 0}
   firstParent: {fileID: 0}
   dropPlace: 0
-  assembleItems: []
-  dissambleItems:
+  holdable: 0
+  assembleItems:
+  - {fileID: 8558497639225705712}
+  - {fileID: 8558497640279509697}
+  dissembleItems:
   - {fileID: 8558497640556407345}
   - {fileID: 8558497639192562184}
+  assembleCount: 0
 --- !u!1 &8558497640556407347
 GameObject:
   m_ObjectHideFlags: 0
@@ -980,7 +989,7 @@ GameObject:
   - component: {fileID: 8558497640556407346}
   - component: {fileID: 8558497640556407350}
   - component: {fileID: 8558497640556407351}
-  - component: {fileID: 8558497640556407344}
+  - component: {fileID: 5440641652378147170}
   - component: {fileID: 8558497640556407345}
   m_Layer: 0
   m_Name: rod_bolt_1
@@ -997,7 +1006,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8558497640556407347}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.032765914, y: -0.46643862, z: -0.50971866}
+  m_LocalPosition: {x: 0.03776227, y: -0.36976343, z: 0.00030347053}
   m_LocalScale: {x: 100, y: 100.00002, z: 100.00002}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1054,8 +1063,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8558497640556407344
-MeshCollider:
+--- !u!136 &5440641652378147170
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1064,10 +1073,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 6725711883144458857, guid: 5ac51b1de82229c4aa66a2565a2792ee, type: 3}
+  m_Radius: 0.00012005928
+  m_Height: 0.00052448723
+  m_Direction: 2
+  m_Center: {x: -3.2940684e-12, y: -5.2236874e-12, z: -0.000039078473}
 --- !u!114 &8558497640556407345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1086,9 +1095,11 @@ MonoBehaviour:
   firstRotation: {x: 0, y: 0, z: 0}
   firstParent: {fileID: 0}
   dropPlace: 0
+  holdable: 0
   assembleItems:
   - {fileID: 8558497640536094371}
-  dissambleItems: []
+  dissembleItems: []
+  assembleCount: 0
 --- !u!1 &8558497640862056631
 GameObject:
   m_ObjectHideFlags: 0
@@ -1112,7 +1123,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8558497640862056631}
-  m_LocalRotation: {x: -0, y: -0.18865383, z: -0, w: 0.9820437}
+  m_LocalRotation: {x: 0, y: -0.18864977, z: 0, w: 0.98204446}
   m_LocalPosition: {x: -0.80415213, y: 1.46, z: -0.18325734}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
@@ -1141,7 +1152,7 @@ GameObject:
   - component: {fileID: 8558497641122941766}
   - component: {fileID: 8558497641122941770}
   - component: {fileID: 8558497641122941771}
-  - component: {fileID: 8558497641122941764}
+  - component: {fileID: 7152881906729863843}
   - component: {fileID: 8558497641122941765}
   m_Layer: 0
   m_Name: pin_clip_1
@@ -1158,7 +1169,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8558497641122941767}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.0010036469, y: -0.09067519, z: -0.5830221}
+  m_LocalPosition: {x: 0.006, y: 0.006, z: -0.073}
   m_LocalScale: {x: 100, y: 100.00002, z: 100.00002}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1215,8 +1226,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8558497641122941764
-MeshCollider:
+--- !u!65 &7152881906729863843
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1225,10 +1236,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -4313931890668777801, guid: 5ac51b1de82229c4aa66a2565a2792ee, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.00025897732, y: 0.00008434584, z: 0.00024036842}
+  m_Center: {x: 0.0000035627106, y: 0.0000010693363, z: -0.0000031264726}
 --- !u!114 &8558497641122941765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1247,6 +1257,8 @@ MonoBehaviour:
   firstRotation: {x: 0, y: 0, z: 0}
   firstParent: {fileID: 0}
   dropPlace: 0
+  holdable: 0
   assembleItems:
   - {fileID: 8558497639021747533}
-  dissambleItems: []
+  dissembleItems: []
+  assembleCount: 0
