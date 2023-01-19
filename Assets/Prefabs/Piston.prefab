@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8558497639021747539}
   - component: {fileID: 4918932076018676131}
   - component: {fileID: 8558497639021747533}
+  - component: {fileID: 783356822}
   m_Layer: 0
   m_Name: wrist_pin
   m_TagString: Untagged
@@ -96,9 +97,9 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.00008881839
-  m_Height: 0.00087241695
+  m_Height: 0.0006950364
   m_Direction: 1
-  m_Center: {x: -1.792751e-10, y: 0.000009834407, z: -0.000000021101217}
+  m_Center: {x: -1.7877051e-10, y: 0.0000025444026, z: -0.00000002110004}
 --- !u!114 &8558497639021747533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,13 +117,31 @@ MonoBehaviour:
   firstParent: {fileID: 0}
   onDropPlace: 0
   holdable: 0
-  _animation: {fileID: 0}
+  _animation: {fileID: 783356822}
+  assableAnimationClip: {fileID: 7400000, guid: 12c226f5612dfca409fb256cf83e945a, type: 2}
+  dissembleAnimationClip: {fileID: 7400000, guid: aaaf2059569f96c47ab74b1f321f83d9, type: 2}
   assembleItems:
   - {fileID: 8558497640402007653}
   - {fileID: 8558497639400109914}
   dissembleItems:
   - {fileID: 8558497641122941765}
   - {fileID: 8558497640321361797}
+--- !u!111 &783356822
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8558497639021747535}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: aaaf2059569f96c47ab74b1f321f83d9, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: aaaf2059569f96c47ab74b1f321f83d9, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &8558497639192562186
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,6 +260,8 @@ MonoBehaviour:
   onDropPlace: 0
   holdable: 0
   _animation: {fileID: 1847163666}
+  assableAnimationClip: {fileID: 7400000, guid: 89e56c0ad1857bb469fdad848b4dfac8, type: 2}
+  dissembleAnimationClip: {fileID: 7400000, guid: bb1b2621bc28554419a57fe0872a04a7, type: 2}
   assembleItems:
   - {fileID: 8558497640536094371}
   dissembleItems: []
@@ -254,9 +275,7 @@ Animation:
   m_Enabled: 1
   serializedVersion: 3
   m_Animation: {fileID: 0}
-  m_Animations:
-  - {fileID: 7400000, guid: 89e56c0ad1857bb469fdad848b4dfac8, type: 2}
-  - {fileID: 7400000, guid: bb1b2621bc28554419a57fe0872a04a7, type: 2}
+  m_Animations: []
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -377,6 +396,8 @@ MonoBehaviour:
   onDropPlace: 0
   holdable: 0
   _animation: {fileID: 0}
+  assableAnimationClip: {fileID: 0}
+  dissembleAnimationClip: {fileID: 0}
   assembleItems: []
   dissembleItems:
   - {fileID: 8558497640536094371}
@@ -496,6 +517,8 @@ MonoBehaviour:
   onDropPlace: 0
   holdable: 0
   _animation: {fileID: 0}
+  assableAnimationClip: {fileID: 0}
+  dissembleAnimationClip: {fileID: 0}
   assembleItems: []
   dissembleItems:
   - {fileID: 8558497639021747533}
@@ -615,6 +638,8 @@ MonoBehaviour:
   onDropPlace: 0
   holdable: 0
   _animation: {fileID: 0}
+  assableAnimationClip: {fileID: 0}
+  dissembleAnimationClip: {fileID: 0}
   assembleItems: []
   dissembleItems:
   - {fileID: 8558497640536094371}
@@ -735,6 +760,8 @@ MonoBehaviour:
   onDropPlace: 0
   holdable: 0
   _animation: {fileID: 0}
+  assableAnimationClip: {fileID: 0}
+  dissembleAnimationClip: {fileID: 0}
   assembleItems:
   - {fileID: 8558497639021747533}
   dissembleItems: []
@@ -855,6 +882,8 @@ MonoBehaviour:
   onDropPlace: 0
   holdable: 0
   _animation: {fileID: 0}
+  assableAnimationClip: {fileID: 0}
+  dissembleAnimationClip: {fileID: 0}
   assembleItems: []
   dissembleItems:
   - {fileID: 8558497639021747533}
@@ -975,6 +1004,8 @@ MonoBehaviour:
   onDropPlace: 0
   holdable: 0
   _animation: {fileID: 0}
+  assableAnimationClip: {fileID: 0}
+  dissembleAnimationClip: {fileID: 0}
   assembleItems:
   - {fileID: 8558497639225705712}
   - {fileID: 8558497640279509697}
@@ -1099,6 +1130,8 @@ MonoBehaviour:
   onDropPlace: 0
   holdable: 0
   _animation: {fileID: 1109335511}
+  assableAnimationClip: {fileID: 7400000, guid: b6621370ad55d994d83afc55c6cdaf1a, type: 2}
+  dissembleAnimationClip: {fileID: 7400000, guid: 7f07c66545772af418b58dc7406bcb55, type: 2}
   assembleItems:
   - {fileID: 8558497640536094371}
   dissembleItems: []
@@ -1112,9 +1145,7 @@ Animation:
   m_Enabled: 1
   serializedVersion: 3
   m_Animation: {fileID: 0}
-  m_Animations:
-  - {fileID: 7400000, guid: b6621370ad55d994d83afc55c6cdaf1a, type: 2}
-  - {fileID: 7400000, guid: 7f07c66545772af418b58dc7406bcb55, type: 2}
+  m_Animations: []
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -1276,6 +1307,8 @@ MonoBehaviour:
   onDropPlace: 0
   holdable: 0
   _animation: {fileID: 0}
+  assableAnimationClip: {fileID: 0}
+  dissembleAnimationClip: {fileID: 0}
   assembleItems:
   - {fileID: 8558497639021747533}
   dissembleItems: []

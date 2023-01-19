@@ -22,6 +22,8 @@ public class DragItem : ObjectID
     [NonSerialized] public Vector3 firstRotation;
 
     [SerializeField] private Animation _animation;
+    [SerializeField] private AnimationClip assableAnimationClip;
+    [SerializeField] private AnimationClip dissembleAnimationClip;
     [SerializeField] private DragItem[] assembleItems;
     [SerializeField] private DragItem[] dissembleItems;
 
@@ -44,7 +46,8 @@ public class DragItem : ObjectID
 
             if (_animation && !_animation.isPlaying)
             {
-                _animation.clip = _animation.GetClip("Bolt_Animation");
+                _animation.AddClip(assableAnimationClip,"clip1");
+                _animation.clip = _animation.GetClip("clip1");
                 _dropPlaceAnimation = false;
                 _animation.Play();
             }
@@ -63,7 +66,8 @@ public class DragItem : ObjectID
             {
                 if(!_animation.isPlaying && !_animationComplete)
                 {
-                    _animation.clip = _animation.GetClip("BoltRemove_Animation");
+                    _animation.AddClip(dissembleAnimationClip, "clip2");
+                    _animation.clip = _animation.GetClip("clip2");
                     _animation.Play();
                 }
                 
@@ -94,6 +98,7 @@ public class DragItem : ObjectID
         if (_per2 >= 1)
         {
             _outDropPlaceAnimation = false;
+            _animationComplete= false;
         }
         onDropPlace = false;
     }
@@ -109,12 +114,6 @@ public class DragItem : ObjectID
         else
         {
             holdable = dissembleItems.All(x => x.onDropPlace == false);
-
-            //if (holdable && _animation && !_animationComplete)           
-            //    holdable = false;          
-            //else if (holdable && _animation && _animationComplete)
-            //    holdable = true;
-
         }      
 
         return holdable;
