@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class DragItem : ObjectID
 {
+   
     private Collider _collider;
 
     public DropPlace dropItem;
@@ -16,6 +17,7 @@ public class DragItem : ObjectID
 
     private void Awake()
     {
+       
         _collider = GetComponent<Collider>();
     }
 
@@ -26,7 +28,13 @@ public class DragItem : ObjectID
         firstParent= transform.parent;
     }
 
-   
+    public void OnDropPlace()
+    {
+        TaskManager.instance.AddList(this);
+    }
 
- 
+    public void OutDropPlace()
+    {
+        TaskManager.instance.RemoveList(this);
+    }
 }

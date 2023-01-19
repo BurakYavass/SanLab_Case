@@ -371,6 +371,7 @@ GameObject:
   m_Component:
   - component: {fileID: 263197506}
   - component: {fileID: 263197505}
+  - component: {fileID: 263197507}
   m_Layer: 0
   m_Name: SimulationManager
   m_TagString: Untagged
@@ -410,6 +411,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &263197507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263197504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 047bd8882aeacc543b5d0d074d55f5e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DragItems: []
 --- !u!1 &325874449
 GameObject:
   m_ObjectHideFlags: 0
@@ -2802,7 +2816,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1894201174}
-  - component: {fileID: 1894201173}
   m_Layer: 0
   m_Name: Piston (1)
   m_TagString: Untagged
@@ -2810,23 +2823,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1894201173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1894201172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4fdc1ede05261848978da167a0db689, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _dragItemSc: {fileID: 0}
-  _dropPlaceSc: {fileID: 0}
-  _rotateObject: {fileID: 0}
-  active: 0
-  complete: 0
 --- !u!4 &1894201174
 Transform:
   m_ObjectHideFlags: 0

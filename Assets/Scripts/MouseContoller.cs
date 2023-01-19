@@ -52,34 +52,33 @@ public class MouseContoller : MonoBehaviour
                 if (objectId == null)
                     return;
 
+                //Object type kontrolu
                 if (objectId.Type == ObjectID.ObjectType.RotateItem)
-                {
                     _rotateObject = hitObject.transform.GetComponent<ObjectRotater>();
-                }
                 else
                 {
                     _dragItemSc = hitObject.transform.GetComponent<DragItem>();
                     _dropPlaceSc = _dragItemSc.dropItem;
                 }
+                                
                
+
                 if (_dragItemSc != null )
                 {
                     //Hit ettigimiz objeyi toDrag objesine atiyoruz
                     toDrag = hitObject.transform;
                     toDragFirstPos = _dragItemSc.firstPosition;
-                    dragging = true;
 
-                  
+                    _dragItemSc.dropPlace = false;
+                    dragging = true;
+                    dropArea = false;
+                    _dragItemSc.OutDropPlace();
 
                     Vector3 screenPoint = Camera.WorldToScreenPoint(hitObject.point);
                     mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
                     mousePos = Camera.ScreenToWorldPoint(mousePos);
 
                     offSet = mousePos - hitObject.point;
-
-                    dropArea = false;
-                    
-
                 }
                 else
                 {
@@ -139,26 +138,30 @@ public class MouseContoller : MonoBehaviour
 
                 if (_dragItemSc != null)
                 {
-                    // Sürüklediğim objeyi bıraktığımız yerle değerlerini eşitliyor
+                    _dragItemSc.dropPlace = true;
+                    _dragItemSc.OnDropPlace();
+
+                    // Sürüklenen objeyi bıraktığımız yerle değerlerini eşitliyor
                     toDrag.position = _dropPlaceSc.transform.position;
                     toDrag.eulerAngles =  _dropPlaceSc.transform.eulerAngles;
                     
                     toDrag.parent = _dropPlaceSc.transform;
                     _dropPlaceSc.RendererControl(false);
-                    
-                   
+                 
                 }
 
                 _dragItemSc = null;
                 _dropPlaceSc = null;
             }
-            else if (!dropArea)
+            else 
             {
                 dragging = false;
+                _dragItemSc.dropPlace = false;
+                _dragItemSc.OutDropPlace();
+
                 toDrag.position = Vector3.Lerp(toDrag.position, toDragFirstPos, 1.0f);
                 toDrag.eulerAngles = _dragItemSc.firstRotation;
                 toDrag.parent = _dragItemSc.firstParent;
-                
 
                 _dragItemSc = null;
                 _dropPlaceSc = null;
