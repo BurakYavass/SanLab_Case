@@ -1,23 +1,24 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class DragItem : ObjectID
 {
-    public DropPlace dropItem;
+    public DropPlace dropPlace;
 
     public Vector3 firstPosition;
     public Vector3 firstRotation;
     public Transform firstParent;
 
-    public bool dropPlace = false;
+    public bool onDropPlace = false;
     public bool holdable = false;
 
     [SerializeField] private DragItem[] assembleItems;
     [SerializeField] private DragItem[] dissembleItems;
 
-    public int assembleCount;
-    private int dissembleCount;
+    //public int assembleCount;
+    //private int dissembleCount;
 
     private void Start()
     {
@@ -29,23 +30,16 @@ public class DragItem : ObjectID
 
     public bool HoldAble()
     {
-        for (int i = 0; i < assembleItems.Length; i++)
+       
+        if (!onDropPlace)
         {
-            if (assembleItems[i].dropPlace)
-            {
-                assembleCount++;
-            }
-        }
-
-        if (assembleCount == assembleItems.Length)
-        {
-            holdable = true;
+            holdable = assembleItems.All(x => x.onDropPlace == true);
         }
         else
         {
-            holdable = false;
-            assembleCount= 0;
+            holdable = dissembleItems.All(x => x.onDropPlace == false);
         }
+            
         return holdable;
     }
 

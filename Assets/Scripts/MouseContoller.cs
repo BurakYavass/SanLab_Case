@@ -60,7 +60,7 @@ public class MouseContoller : MonoBehaviour
                 else if(hitObject.transform.GetComponent<DragItem>().HoldAble())
                 {
                     _dragItemSc = hitObject.transform.GetComponent<DragItem>();
-                    _dropPlaceSc = _dragItemSc.dropItem;
+                    _dropPlaceSc = _dragItemSc.dropPlace;
                 }
 
                                  
@@ -71,7 +71,7 @@ public class MouseContoller : MonoBehaviour
                     toDrag = hitObject.transform;
                     toDragFirstPos = _dragItemSc.firstPosition;
 
-                    _dragItemSc.dropPlace = false;
+                    _dragItemSc.onDropPlace = false;
                     dragging = true;
                     dropArea = false;
                     _dragItemSc.OutDropPlace();
@@ -140,7 +140,7 @@ public class MouseContoller : MonoBehaviour
 
                 if (_dragItemSc != null)
                 {
-                    _dragItemSc.dropPlace = true;
+                    _dragItemSc.onDropPlace = true;
                     _dragItemSc.OnDropPlace();
 
                     // Sürüklenen objeyi bıraktığımız yerle değerlerini eşitliyor
@@ -158,7 +158,7 @@ public class MouseContoller : MonoBehaviour
             else 
             {
                 dragging = false;
-                _dragItemSc.dropPlace = false;
+                _dragItemSc.onDropPlace = false;
                 _dragItemSc.OutDropPlace();
 
                 toDrag.position = Vector3.Lerp(toDrag.position, toDragFirstPos, 1.0f);
