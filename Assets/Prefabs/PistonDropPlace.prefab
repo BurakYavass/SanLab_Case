@@ -1000,6 +1000,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8244466483574753003}
   - component: {fileID: 8244466483574752996}
+  - component: {fileID: 1077294098}
   m_Layer: 0
   m_Name: PistonDropPlace
   m_TagString: Untagged
@@ -1045,4 +1046,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Type: 2
-  _rotationSpeed: 5
+  _rotationSpeed: 10
+  capsuleCollider: {fileID: 1077294098}
+--- !u!136 &1077294098
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8244466483574753002}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.07
+  m_Height: 0.32
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.06, z: 0}
