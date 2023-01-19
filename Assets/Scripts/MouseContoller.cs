@@ -54,16 +54,18 @@ public class MouseContoller : MonoBehaviour
 
                 //Object type kontrolu
                 if (objectId.Type == ObjectID.ObjectType.RotateItem)
+                {
                     _rotateObject = hitObject.transform.GetComponent<ObjectRotater>();
-                else
+                }                   
+                else if(hitObject.transform.GetComponent<DragItem>().HoldAble())
                 {
                     _dragItemSc = hitObject.transform.GetComponent<DragItem>();
                     _dropPlaceSc = _dragItemSc.dropItem;
                 }
-                                
-               
 
-                if (_dragItemSc != null )
+                                 
+
+                if (_dragItemSc != null)
                 {
                     //Hit ettigimiz objeyi toDrag objesine atiyoruz
                     toDrag = hitObject.transform;

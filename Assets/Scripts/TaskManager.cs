@@ -7,10 +7,10 @@ using UnityEngine.Events;
 public class TaskManager : MonoBehaviour
 {
     public static TaskManager instance = null;
-    //public ManagerState managerState;
     
-
     [SerializeField] private List<DragItem> DragItems = new List<DragItem>();
+
+    private bool complete = false;    
 
     private void Awake()
     {
@@ -18,6 +18,13 @@ public class TaskManager : MonoBehaviour
         {
             instance= this;
         }
+    }
+    private void Update()
+    {
+        if (DragItems.Count == 10)
+            complete = true;
+        else
+            complete = false;
     }
 
 
