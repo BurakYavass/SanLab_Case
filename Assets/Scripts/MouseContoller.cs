@@ -12,20 +12,18 @@ public class MouseContoller : MonoBehaviour
     [SerializeField] private DropPlace _dropPlaceSc;
     [SerializeField] private ObjectRotater _rotateObject;
     
-    
-
-    private Camera Camera;
-    private Vector3 offSet;
+    private Camera _camera;
+    private Vector3 _offSet;
 
 
-    private bool dragging = false;
-    private bool dropArea = false; 
+    private bool _dragging = false;
+    private bool _dropArea = false; 
     public bool complete = false;
 
  
     void Start()
     {
-        Camera = Camera.main;       
+        _camera = Camera.main;       
     }
 
     
@@ -42,7 +40,7 @@ public class MouseContoller : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            Ray ray = Camera.ScreenPointToRay(Input.mousePosition);
+            Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitObject;
 
             if (Physics.Raycast(ray, out hitObject))
@@ -65,23 +63,19 @@ public class MouseContoller : MonoBehaviour
                                  
 
                 if (_dragItemSc != null)
-                {
-                    //Hit ettigimiz objeyi toDrag objesine atiyoruz
-                    //_dragItemSc = hitObject.transform;
+                {                 
+                    _dragging = true;
+                    _dropArea = false;
                     
-                    dragging = true;
-                    dropArea = false;
-                    
-
-                    Vector3 screenPoint = Camera.WorldToScreenPoint(hitObject.point);
+                    Vector3 screenPoint = _camera.WorldToScreenPoint(hitObject.point);
                     mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
-                    mousePos = Camera.ScreenToWorldPoint(mousePos);
+                    mousePos = _camera.ScreenToWorldPoint(mousePos);
 
-                    offSet = mousePos - hitObject.point;
+                    _offSet = mousePos - hitObject.point;
                 }
                 else
                 {
-                    dragging = false;
+                    _dragging = false;
                     
                 }
             }
@@ -90,24 +84,24 @@ public class MouseContoller : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             // Drag Item move
-            if (dragging && !_rotateObject)
+            if (_dragging && !_rotateObject)
             {
-                Vector3 screenPoint = Camera.WorldToScreenPoint(_dragItemSc.transform.position);
+                Vector3 screenPoint = _camera.WorldToScreenPoint(_dragItemSc.transform.position);
                 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
-                mousePos = Camera.ScreenToWorldPoint(mousePos);
+                mousePos = _camera.ScreenToWorldPoint(mousePos);
 
                 //Drag object position change
-                _dragItemSc.transform.position = mousePos - offSet;
+                _dragItemSc.transform.position = mousePos - _offSet;
 
                 var distance = Vector3.Distance(_dragItemSc.transform.position, _dropPlaceSc.transform.position);              
                 if (distance < 0.8f)
                 {                   
-                    dropArea = true;
+                    _dropArea = true;
                     _dropPlaceSc.RendererControl(true);
                 }
                 else
                 {                 
-                    dropArea = false;
+                    _dropArea = false;
                     _dropPlaceSc.RendererControl(false);
 
                 }
@@ -130,10 +124,10 @@ public class MouseContoller : MonoBehaviour
             if (_dropPlaceSc == null && _dragItemSc == null)
                 return;
 
-            if (dropArea)
+            if (_dropArea)
             {
-                dropArea = false;
-                dragging = false;
+                _dropArea = false;
+                _dragging = false;
 
                 if (_dragItemSc != null)
                 {                    
@@ -147,8 +141,8 @@ public class MouseContoller : MonoBehaviour
             }
             else 
             {
-                dragging = false;
-                dropArea = false;
+                _dragging = false;
+                _dropArea = false;
                 _dragItemSc.OutDropPlace();
 
                 _dragItemSc = null;

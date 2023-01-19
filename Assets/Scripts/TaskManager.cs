@@ -51,11 +51,4 @@ public class TaskManager : MonoBehaviour
         }
 
     }
-
-
-    //public void AddList(DragItem item) => DragItems.Add(item);
-
-
-    //public void RemoveList(DragItem item) => DragItems.Remove(item);
-
 }

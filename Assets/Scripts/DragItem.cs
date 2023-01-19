@@ -7,7 +7,7 @@ public class DragItem : ObjectID
 {
     public DropPlace dropItem;
     public Transform firstParent;
-    private Transform dropPlaceTransform;
+    private Transform _dropPlaceTransform;
 
     public bool onDropPlace = false;
     public bool holdable = false;
@@ -39,9 +39,9 @@ public class DragItem : ObjectID
         if (_dropPlaceAnimation)
         {
             _per += 2.5f * Time.deltaTime;
-            transform.position = Vector3.Lerp(transform.position, dropPlaceTransform.position, _per);
-            transform.eulerAngles = dropPlaceTransform.eulerAngles;
-            transform.parent = dropPlaceTransform.parent;
+            transform.position = Vector3.Lerp(transform.position, _dropPlaceTransform.position, _per);
+            transform.eulerAngles = _dropPlaceTransform.eulerAngles;
+            transform.parent = _dropPlaceTransform.parent;
             onDropPlace = true;
 
             if (_animation && !_animation.isPlaying)
@@ -125,12 +125,11 @@ public class DragItem : ObjectID
     {
         onDropPlace= true;
         _dropPlaceAnimation= true;
-        dropPlaceTransform = transform;      
+        _dropPlaceTransform = transform;      
     }
 
     public void OutDropPlace()
-    {
-        //onDropPlace= false;
+    {    
         _outDropPlaceAnimation = true; 
     }
 
