@@ -113,18 +113,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   dropItem: {fileID: 0}
-  firstPosition: {x: 0, y: 0, z: 0}
-  firstRotation: {x: 0, y: 0, z: 0}
   firstParent: {fileID: 0}
   onDropPlace: 0
   holdable: 0
+  _animation: {fileID: 0}
   assembleItems:
   - {fileID: 8558497640402007653}
   - {fileID: 8558497639400109914}
   dissembleItems:
   - {fileID: 8558497641122941765}
   - {fileID: 8558497640321361797}
-  assembleCount: 0
 --- !u!1 &8558497639192562186
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,6 +136,7 @@ GameObject:
   - component: {fileID: 8558497639192562190}
   - component: {fileID: 1366209762902597211}
   - component: {fileID: 8558497639192562184}
+  - component: {fileID: 1847163666}
   m_Layer: 0
   m_Name: rod_bolt_2
   m_TagString: Untagged
@@ -159,7 +158,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8558497640862056629}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
 --- !u!33 &8558497639192562189
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -220,10 +219,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.00012005928
-  m_Height: 0.00052448723
+  m_Radius: 0.00016729513
+  m_Height: 0.0007693526
   m_Direction: 2
-  m_Center: {x: -3.2940684e-12, y: -5.2236874e-12, z: -0.000039078473}
+  m_Center: {x: 0.0000014595417, y: -4.5805425e-12, z: -0.00016151146}
 --- !u!114 &8558497639192562184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,15 +237,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   dropItem: {fileID: 0}
-  firstPosition: {x: 0, y: 0, z: 0}
-  firstRotation: {x: 0, y: 0, z: 0}
   firstParent: {fileID: 0}
   onDropPlace: 0
   holdable: 0
+  _animation: {fileID: 1847163666}
   assembleItems:
   - {fileID: 8558497640536094371}
   dissembleItems: []
-  assembleCount: 0
+--- !u!111 &1847163666
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8558497639192562186}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 89e56c0ad1857bb469fdad848b4dfac8, type: 2}
+  - {fileID: 7400000, guid: bb1b2621bc28554419a57fe0872a04a7, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &8558497639225705714
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,15 +373,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   dropItem: {fileID: 0}
-  firstPosition: {x: 0, y: 0, z: 0}
-  firstRotation: {x: 0, y: 0, z: 0}
   firstParent: {fileID: 0}
   onDropPlace: 0
   holdable: 0
+  _animation: {fileID: 0}
   assembleItems: []
   dissembleItems:
   - {fileID: 8558497640536094371}
-  assembleCount: 0
 --- !u!1 &8558497639400109908
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,15 +492,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   dropItem: {fileID: 0}
-  firstPosition: {x: 0, y: 0, z: 0}
-  firstRotation: {x: 0, y: 0, z: 0}
   firstParent: {fileID: 0}
   onDropPlace: 0
   holdable: 0
+  _animation: {fileID: 0}
   assembleItems: []
   dissembleItems:
   - {fileID: 8558497639021747533}
-  assembleCount: 0
 --- !u!1 &8558497640279509699
 GameObject:
   m_ObjectHideFlags: 0
@@ -601,16 +611,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   dropItem: {fileID: 0}
-  firstPosition: {x: 0, y: 0, z: 0}
-  firstRotation: {x: 0, y: 0, z: 0}
   firstParent: {fileID: 0}
   onDropPlace: 0
   holdable: 0
+  _animation: {fileID: 0}
   assembleItems: []
   dissembleItems:
   - {fileID: 8558497640536094371}
   - {fileID: 8558497639225705712}
-  assembleCount: 0
 --- !u!1 &8558497640321361799
 GameObject:
   m_ObjectHideFlags: 0
@@ -723,15 +731,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   dropItem: {fileID: 0}
-  firstPosition: {x: 0, y: 0, z: 0}
-  firstRotation: {x: 0, y: 0, z: 0}
   firstParent: {fileID: 0}
   onDropPlace: 0
   holdable: 0
+  _animation: {fileID: 0}
   assembleItems:
   - {fileID: 8558497639021747533}
   dissembleItems: []
-  assembleCount: 0
 --- !u!1 &8558497640402007655
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,16 +851,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   dropItem: {fileID: 0}
-  firstPosition: {x: 0, y: 0, z: 0}
-  firstRotation: {x: 0, y: 0, z: 0}
   firstParent: {fileID: 0}
   onDropPlace: 0
   holdable: 0
+  _animation: {fileID: 0}
   assembleItems: []
   dissembleItems:
   - {fileID: 8558497639021747533}
   - {fileID: 8558497640279509697}
-  assembleCount: 0
 --- !u!1 &8558497640536094429
 GameObject:
   m_ObjectHideFlags: 0
@@ -967,18 +971,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   dropItem: {fileID: 0}
-  firstPosition: {x: 0, y: 0, z: 0}
-  firstRotation: {x: 0, y: 0, z: 0}
   firstParent: {fileID: 0}
   onDropPlace: 0
   holdable: 0
+  _animation: {fileID: 0}
   assembleItems:
   - {fileID: 8558497639225705712}
   - {fileID: 8558497640279509697}
   dissembleItems:
   - {fileID: 8558497640556407345}
   - {fileID: 8558497639192562184}
-  assembleCount: 0
 --- !u!1 &8558497640556407347
 GameObject:
   m_ObjectHideFlags: 0
@@ -992,6 +994,7 @@ GameObject:
   - component: {fileID: 8558497640556407351}
   - component: {fileID: 5440641652378147170}
   - component: {fileID: 8558497640556407345}
+  - component: {fileID: 1109335511}
   m_Layer: 0
   m_Name: rod_bolt_1
   m_TagString: Untagged
@@ -1007,13 +1010,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8558497640556407347}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.03776227, y: -0.36976343, z: 0.00030347053}
+  m_LocalPosition: {x: 0.03776227, y: -0.36976343, z: 0.0003034705}
   m_LocalScale: {x: 100, y: 100.00002, z: 100.00002}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8558497640862056629}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
 --- !u!33 &8558497640556407350
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1074,10 +1077,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.00012005928
-  m_Height: 0.00052448723
+  m_Radius: 0.00014917504
+  m_Height: 0.00076653616
   m_Direction: 2
-  m_Center: {x: -3.2940684e-12, y: -5.2236874e-12, z: -0.000039078473}
+  m_Center: {x: 0.0000015939056, y: -1.9435172e-11, z: -0.00016010294}
 --- !u!114 &8558497640556407345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1092,15 +1095,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   dropItem: {fileID: 0}
-  firstPosition: {x: 0, y: 0, z: 0}
-  firstRotation: {x: 0, y: 0, z: 0}
   firstParent: {fileID: 0}
   onDropPlace: 0
   holdable: 0
+  _animation: {fileID: 1109335511}
   assembleItems:
   - {fileID: 8558497640536094371}
   dissembleItems: []
-  assembleCount: 0
+--- !u!111 &1109335511
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8558497640556407347}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: b6621370ad55d994d83afc55c6cdaf1a, type: 2}
+  - {fileID: 7400000, guid: 7f07c66545772af418b58dc7406bcb55, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &8558497640862056631
 GameObject:
   m_ObjectHideFlags: 0
@@ -1254,12 +1272,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   dropItem: {fileID: 0}
-  firstPosition: {x: 0, y: 0, z: 0}
-  firstRotation: {x: 0, y: 0, z: 0}
   firstParent: {fileID: 0}
   onDropPlace: 0
   holdable: 0
+  _animation: {fileID: 0}
   assembleItems:
   - {fileID: 8558497639021747533}
   dissembleItems: []
-  assembleCount: 0

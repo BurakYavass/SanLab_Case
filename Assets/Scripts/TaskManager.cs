@@ -41,12 +41,12 @@ public class TaskManager : MonoBehaviour
 
         if (complete)
         {
-            _mouseContoller.enabled = false;
+            _mouseContoller.complete = true;
             _uIPanel.SetActive(true);
         }
         else
         {
-            _mouseContoller.enabled = true;
+            _mouseContoller.complete = false;
             _uIPanel.SetActive(false);
         }
 
