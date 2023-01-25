@@ -38,7 +38,7 @@ public class DragItem : ObjectID
     {
         if (_dropPlaceAnimation)
         {
-            _per += 2.5f * Time.deltaTime;
+            _per += 2f * Time.deltaTime;
             transform.position = Vector3.Lerp(transform.position, _dropPlaceTransform.position, _per);
             transform.eulerAngles = _dropPlaceTransform.eulerAngles;
             transform.parent = _dropPlaceTransform.parent;

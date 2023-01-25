@@ -13,8 +13,8 @@ public class MouseContoller : MonoBehaviour
     [SerializeField] private ObjectRotater _rotateObject;
     
     private Camera _camera;
-    private Vector3 _offSet;
-
+    private Vector3 _offset;
+    private Vector3 _screenPoint;
 
     private bool _dragging = false;
     private bool _dropArea = false; 
@@ -35,28 +35,28 @@ public class MouseContoller : MonoBehaviour
 
     private void MouseController()
     {
-        Vector3 mousePos;
+        Vector3 mouseScreenPos;
 
 
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hitObject;
+            RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hitObject))
+            if (Physics.Raycast(ray, out hit))
             {
-                var objectId = hitObject.transform.GetComponent<ObjectID>();
+                var objectId = hit.transform.GetComponent<ObjectID>();
                 if (objectId == null)
                     return;
 
                 //Object type kontrolu
                 if (objectId.Type == ObjectID.ObjectType.RotateItem)
                 {
-                    _rotateObject = hitObject.transform.GetComponent<ObjectRotater>();
+                    _rotateObject = hit.transform.GetComponent<ObjectRotater>();
                 }                   
-                else if(hitObject.transform.GetComponent<DragItem>().HoldAble())
+                else if(hit.transform.GetComponent<DragItem>().HoldAble())
                 {
-                    _dragItemSc = hitObject.transform.GetComponent<DragItem>();
+                    _dragItemSc = hit.transform.GetComponent<DragItem>();
                     _dropPlaceSc = _dragItemSc.dropItem;
                 }
 
@@ -67,11 +67,11 @@ public class MouseContoller : MonoBehaviour
                     _dragging = true;
                     _dropArea = false;
                     
-                    Vector3 screenPoint = _camera.WorldToScreenPoint(hitObject.point);
-                    mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
-                    mousePos = _camera.ScreenToWorldPoint(mousePos);
+                    _screenPoint = _camera.WorldToScreenPoint(hit.point);
+                    mouseScreenPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, _screenPoint.z);
+                    mouseScreenPos = _camera.ScreenToWorldPoint(mouseScreenPos);
 
-                    _offSet = mousePos - hitObject.point;
+                    _offset = _dragItemSc.transform.position - mouseScreenPos;
                 }
                 else
                 {
@@ -86,12 +86,12 @@ public class MouseContoller : MonoBehaviour
             // Drag Item move
             if (_dragging && !_rotateObject)
             {
-                Vector3 screenPoint = _camera.WorldToScreenPoint(_dragItemSc.transform.position);
-                mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
-                mousePos = _camera.ScreenToWorldPoint(mousePos);
+                
+                mouseScreenPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, _screenPoint.z);
+                mouseScreenPos = _camera.ScreenToWorldPoint(mouseScreenPos);
 
                 //Drag object position change
-                _dragItemSc.transform.position = mousePos - _offSet;
+                _dragItemSc.transform.position = mouseScreenPos + _offset;
 
                 var distance = Vector3.Distance(_dragItemSc.transform.position, _dropPlaceSc.transform.position);              
                 if (distance < 0.8f)
